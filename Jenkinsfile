@@ -5,8 +5,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/itsChandramahesh/DevOps-CICD'
-            }
+                git branch: 'main', url: 'https://github.com/itsChandramahesh/DevOps-CICD.git'
         }
 
         stage('Build Docker Image') {
