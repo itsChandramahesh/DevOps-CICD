@@ -6,6 +6,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: 'main', url: 'https://github.com/itsChandramahesh/DevOps-CICD.git'
+            }
         }
 
         stage('Build Docker Image') {
@@ -23,7 +24,7 @@ pipeline {
 
         stage('Run New Container') {
             steps {
-                sh 'docker run -d -p 5000:5000 --maheshnew myapp myapp'
+                sh 'docker run -d -p 5000:5000 --name myapp myapp'
             }
         }
 
